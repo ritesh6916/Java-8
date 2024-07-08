@@ -39,6 +39,10 @@ public class App {
 		msg="Employee from kolkata with more then 50K salary";
 		printEmp(kolsal, employees, msg);
 		
+		// To check the managers form Kolkata
+		msg="managers from kolkata (predicate joining)";
+		printEmp(ifmanager.and(empkol), employees, msg);
+		
 	}
 
 	// This method will print elements by checking against the predicate supplied
