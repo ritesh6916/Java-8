@@ -21,28 +21,32 @@ public class App {
 	}
 
 	public static void main(String[] args) {
-		
+
 		String msg;
-		
+
 		// predicate to check for list of managers
 		Predicate<Employee> ifmanager = emp -> emp.getDesignation().equalsIgnoreCase("Manager");
-		msg="list of managers";
-		printEmp(ifmanager, employees,msg);
-		
-		//Predicate to check the employees from kolkata
+		msg = "list of managers";
+		printEmp(ifmanager, employees, msg);
+
+		// Predicate to check the employees from kolkata
 		Predicate<Employee> empkol = emp -> emp.getCity().equalsIgnoreCase("Kolkata");
-		msg="Employees from kolkata";
+		msg = "Employees from kolkata";
 		printEmp(empkol, employees, msg);
-		
-		//Predicate to check the employees whose salary is getter then 50K
+
+		// Predicate to check the employees whose salary is getter then 50K
 		Predicate<Employee> kolsal = emp -> emp.getCity().equalsIgnoreCase("Kolkata") && emp.getSalary() > 50000;
-		msg="Employee from kolkata with more then 50K salary";
+		msg = "Employee from kolkata with more then 50K salary";
 		printEmp(kolsal, employees, msg);
-		
+
 		// To check the managers form Kolkata
-		msg="managers from kolkata (predicate joining)";
+		msg = "managers from kolkata (predicate joining)";
 		printEmp(ifmanager.and(empkol), employees, msg);
-		
+
+		// To get Employee who are not manager
+		msg = "Employees who are not manager";
+		printEmp(ifmanager.negate(), employees, msg);
+
 	}
 
 	// This method will print elements by checking against the predicate supplied
