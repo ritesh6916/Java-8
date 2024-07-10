@@ -12,8 +12,12 @@ public class App {
 
 		// To remove spaces from a String
 		Function<String, String> removeAllSpace = s -> s.replaceAll(" ", "");
-		System.out.println("Original String: " + ritesh);
+		System.out.println("Original String: " + ritesh + "\n");
 		System.out.println("After removing spaces: " + removeAllSpace.apply(ritesh) + "\n");
+
+		// To Count Spaces in the String
+		Function<String, Integer> countSpace = s -> s.length() - s.replaceAll(" ", "").length();
+		System.out.println("Space Count: " + countSpace.apply(ritesh));
 
 	}
 }
