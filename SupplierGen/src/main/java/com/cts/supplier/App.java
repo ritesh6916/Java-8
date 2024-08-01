@@ -25,5 +25,35 @@ public class App {
 			return (int) (Math.random() * 1000000);
 		};
 		System.out.println("your OTO is " + generateSixDigitOTP.get());
+
+		// Generate password(8L) with even place digit & odd place (A-Z,@,*,#)
+		Supplier<String> generateEightDigitPassword = () -> {
+
+			String password = "";
+
+			// Generate randome digit (0 - 9)
+			Supplier<Integer> randomDigit = () -> {
+				return (int) (Math.random() * 10);
+			};
+
+			// Generate character(A-Z,@,*,#)
+			Supplier<Character> randomChar = () -> {
+				char[] allowedChars = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+						'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '@', '*', '#' };
+				int index = (int) (Math.random() * 29);
+				return allowedChars[index];
+			};
+
+			for (int i = 1; i <= 8; i++) {
+				if (i % 2 == 0) {
+					password = password + randomDigit.get();
+				} else {
+					password = password + randomChar.get();
+				}
+			}
+			return password;
+		};
+
+		System.out.println("generated Password: " + generateEightDigitPassword.get());
 	}
 }
