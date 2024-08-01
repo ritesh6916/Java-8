@@ -20,5 +20,10 @@ public class App {
 		};
 		System.out.println("Randomly Selected name is: " + selectName.get());
 
+		// Supplier to generate 6 digit OTP
+		Supplier<Integer> generateSixDigitOTP = () -> {
+			return (int) (Math.random() * 1000000);
+		};
+		System.out.println("your OTO is " + generateSixDigitOTP.get());
 	}
 }
