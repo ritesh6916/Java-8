@@ -36,6 +36,23 @@ public class IntPredicateDemo {
 		}
 		System.out.println();
 
+		// IntPredicate to check number is prime or not
+		IntPredicate isPrime = num -> {
+			for (int i = 2; i <= num / 2; i++) {
+				if (num % i == 0) {
+					return false;
+				}
+			}
+			return true;
+		};
+
+		System.out.print("Prime Numbers are: ");
+		for (int number : numbers) {
+			if (isPrime.test(number)) {
+				System.out.print(number + " ");
+			}
+		}
+		System.out.println();
 	}
 
 }
