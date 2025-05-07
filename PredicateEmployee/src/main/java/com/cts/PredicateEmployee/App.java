@@ -34,7 +34,7 @@ public class App {
 		msg = "Employees from kolkata";
 		printEmp(empkol, employees, msg);
 
-		// Predicate to check the employees whose salary is getter then 50K
+		// Predicate to check the employees form Kolkata whose salary is getter then 50K
 		Predicate<Employee> kolsal = emp -> emp.getCity().equalsIgnoreCase("Kolkata") && emp.getSalary() > 50000;
 		msg = "Employee from kolkata with more then 50K salary";
 		printEmp(kolsal, employees, msg);
