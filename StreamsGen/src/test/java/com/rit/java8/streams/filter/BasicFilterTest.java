@@ -7,7 +7,7 @@ import junit.framework.TestCase;
 
 public class BasicFilterTest extends TestCase {
 
-	static BasicFilter basicFilter = new BasicFilter();
+	BasicFilter basicFilter = new BasicFilter();
 
 	static List<Integer> intNumbers = new ArrayList<Integer>();
 	static List<Double> doubleData = new ArrayList<Double>();
@@ -44,13 +44,9 @@ public class BasicFilterTest extends TestCase {
 		basicFilter.takeEvenCollection(intNumbers);
 	}
 
-	// increase number by 20 % Test
-	public void increaseBumberByTewntyPercentTest() {
-		basicFilter.increaseBumberByTewntyPercent(doubleData);
-	}
-
 	// filter string by it's strength Test
 	public void filterStringByLengthTest() {
 		basicFilter.filterStringByLength(stringData);
 	}
+
 }

@@ -15,13 +15,6 @@ public class BasicFilter {
 
 	}
 
-	// increase number by 20 %
-	void increaseBumberByTewntyPercent(List<Double> data) {
-
-		List<Double> result = data.stream().map(d -> d + (d * 20 / 100)).collect(Collectors.toList());
-		System.out.println(result);
-	}
-
 	// filter string by it's strength
 	void filterStringByLength(List<String> data) {
 
