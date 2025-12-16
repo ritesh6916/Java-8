@@ -10,7 +10,7 @@ public class BasicFilter {
 	public void takeEvenCollection(List<Integer> numbers) {
 
 		Stream<Integer> s = numbers.stream().filter(n -> n % 2 == 0);
-		List<Integer> result = s.toList();
+		List<Integer> result = s.collect(Collectors.toList());
 		System.out.println(result);
 
 	}
