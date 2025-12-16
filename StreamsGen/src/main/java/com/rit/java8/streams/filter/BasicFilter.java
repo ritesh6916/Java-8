@@ -22,4 +22,10 @@ public class BasicFilter {
 		System.out.println(result);
 	}
 
+	// count Even numbers
+	Long countEvenNumbers(List<Integer> data) {
+		Long count = data.stream().filter(num -> num % 2 == 0).count();
+		return count;
+	}
+
 }

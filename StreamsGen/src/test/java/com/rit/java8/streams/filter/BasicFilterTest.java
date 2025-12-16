@@ -19,4 +19,16 @@ public class BasicFilterTest extends TestCase {
 		basicFilter.filterStringByLength(basicData.getStringData());
 	}
 
+	// count Even numbers
+	public void countEvenNumbersTest() {
+		Long res = basicFilter.countEvenNumbers(basicData.getIntNumbers());
+
+		basicData.getIntNumbers().add(6916);
+
+		System.out.println("Input: " + basicData.getIntNumbers());
+		System.out.print("Even Numbers: ");
+		basicFilter.takeEvenCollection(basicData.getIntNumbers());
+		System.out.print("Even Number Count: " + res);
+	}
+
 }
