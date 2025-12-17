@@ -19,4 +19,11 @@ public class BasicSortTest extends TestCase {
 		System.out.println("Sorted Data: " + newIntData);
 	}
 
+	// sort element in stream using comparator (Customized sorting) - Descending
+	public void sortIntCollectionDescTest() {
+		List<Integer> newIntData = basicSort.sortIntCollectionDesc(data.getIntNumbers());
+		System.out.println("Actual Data: " + data.getIntNumbers());
+		System.out.println("Sorted Data: " + newIntData);
+	}
+
 }
