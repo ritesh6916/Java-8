@@ -64,4 +64,16 @@ public class BasicWaysToCreateStreamTest extends TestCase {
 		obj.getDoubleStream().distinct().forEach(e -> System.out.print(e + "  "));
 	}
 
+	// to get an Array form stream or copy elements of stream into an array
+	public void getArrayFromStreamTest() {
+
+		Stream<Double> doubleStream = obj.getDoubleStream(); // Get Stream
+
+		Double[] doubleArray = doubleStream.toArray(Double[]::new); // Array from Stream object
+
+		for (Double d : doubleArray) {
+			System.out.println(d);
+		}
+	}
+
 }
